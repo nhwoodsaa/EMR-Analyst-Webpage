@@ -1,0 +1,558 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherwell Responses</title>
+	<link rel="icon" href="icon.png" type="image/png">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+			display: block;
+        }
+		.emr-logo {
+			width: 18%;
+			height:auto;
+			align-items: center;
+		}
+		.input-field {
+			display: flex;
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			align-items: center;
+			flex-direction: row;
+		}
+		#input-names {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			width: 100%;
+			max-width: 800px; /* Adjust max-width as needed */
+			margin: 0 auto; /* Center the container horizontally */
+		}
+
+		.input-field:focus {
+			outline: none;
+			border-color: #007bff;
+			box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+		}
+
+		.input-field::placeholder {
+			color: #aaa;
+		}
+		
+		.input-label {
+			font-weight: bold;
+			font-size: 11pt;
+			text-align: left;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			width: 50%;
+		}
+		.input-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 300px;
+            background-color: white;
+            padding: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+			z-index: 1000;
+			
+        }
+		.separator {
+			border-top: 2px dashed #999; /* Use dashed border for a stylish look */
+			margin: 30px 0; /* Increase margin for more separation */
+			width: 100%; /* Make sure the separator spans the entire width */
+			z-index: 10;
+		}
+
+		.section-paragraph {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 1000px; /* Adjust max-width as needed */
+            margin: 0 auto; /* Center the paragraph horizontally */
+		}
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 100%;
+            max-width: 1200px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 10;
+        }
+		.tile {
+			background-color: #005CB9;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile2 {
+			background-color: green;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile3 {
+			background-color: #336666;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile4 {
+			background-color: #CC0000;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile5 {
+			background-color: brown;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile6 {
+			background-color: #FF3366;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile7 {
+			background-color: #FF6600;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile8 {
+			background-color: grey;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile9 {
+			background-color: purple;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile::before, .tile2::before, .tile3::before, .tile4::before, .tile5::before, .tile6::before, .tile7::before, .tile8::before, .tile9::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(255, 255, 255, 0); /* Initial transparent overlay */
+			transition: background-color 0.3s ease;
+			z-index: 0;
+		}
+
+		.tile:hover::before, .tile2:hover::before, .tile3:hover::before, .tile4:hover::before, .tile5:hover::before, .tile6:hover::before, .tile7:hover::before, .tile8:hover::before, .tile9:hover::before  {
+			background-color: rgba(255, 255, 255, 0.3); /* Lighten by adding a white overlay */
+		}
+
+		.tile:hover, .tile2:hover, .tile3:hover, .tile4:hover, .tile5:hover, .tile6:hover, .tile7:hover, .tile8:hover, .tile9:hover {
+			transform: scale(1.03);
+		}
+
+		.tile > *, .tile2 > *, .tile3 > *, .tile4 > *, .tile5 > *, .tile6 > *, .tile7 > *, .tile8 > *, .tile9 > *  {
+			position: relative;
+			z-index: 1;
+		}
+
+		
+        .detail-view {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+        .detail-view p {
+            font-size: 1em;
+            margin: 20px 0;
+			max-width: 1000px;
+			
+        }
+        .back-button, .copy-button {
+            background-color: #636569;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+			transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for smooth transformation and color change */
+
+        }
+		.back-button:hover, .copy-button:hover {
+			background-color: grey; /* Lighten the background color on hover */
+        
+		}
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FF6B00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+			z-index: 1000;
+        }
+        .notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .notification.hide {
+            opacity: 0;
+            transform: translateX(-50%) translateY(10px);
+        }
+		.bottom-div {
+		padding: 50px;
+		}
+		
+    </style>
+</head>
+<body>
+    
+	<h1 id="page-title">
+	<img src="NH-EMR-LOGO-RGB.png" class="emr-logo" alt="Northern Health Logo">
+	<br>
+	Cherwell Service Requests / Incident Responses
+	</h1>
+	<p id="page-description" class="section-paragraph">
+	Click on the relevant issue detailed below to be taken to a generic response which you can copy to your clipboard and paste into the Cherwell resolution field. 
+	Enter your name and the customers name below to have this data automatically populate in the message. 
+	<br>
+	<b>NOTE: Some responses will have placeholder text which needs to be overwritten.</b>
+	</p>
+	<br>
+	<br>
+	<div class="input-container" id="input-names">
+		<div id="input-names">
+			<label for="analyst-name" class="input-label">Analyst Name:</label>
+			<input type="text" id="analyst-name" class="input-field" placeholder="Enter your name">
+			<label for="customer-name" class="input-label">Customer Name:</label>
+			<input type="text" id="customer-name" class="input-field" placeholder="Enter customer name">
+		</div>
+	</div>
+	<br>
+    <div id="grid-container">
+		<h2>All Solutions Responses</h2>
+		<div class="grid-container" id="grid-container-all-solutions">
+			<div class="tile" onclick="showDetail(1001)">Close a Service Request due to insufficient approval</div>
+			<div class="tile" onclick="showDetail(1002)">Close a Service Request post CAB denied (CXIO Not Approved)</div>
+			<div class="tile" onclick="showDetail(1003)">Close a Service Request post CAB denied (Technical Limitation)</div>
+			<div class="tile" onclick="showDetail(1004)">Close an Incident and move to Problem ticket</div>
+			<div class="tile" onclick="showDetail(1005)">Generic Incidents Resolved</div>
+			<div class="tile" onclick="showDetail(1006)">Placeholder</div>
+		</div>
+		<div class="separator"></div>
+		<h2>Core Responses</h2>
+		<div class="grid-container" id="grid-container-core">
+			<div class="tile2" onclick="showDetail(2001)">User Provisioning Request (Single) Completed</div>
+			<div class="tile2" onclick="showDetail(2002)">User Provisioning Request (Bulk) Completed</div>
+			<div class="tile2" onclick="showDetail(2003)">Pre-admits in patient list</div>
+			<div class="tile2" onclick="showDetail(2004)">Failure with the Mapped Account</div>
+			<div class="tile2" onclick="showDetail(2005)">Outpatient clinic code change/New clinic, not showing patients in Home</div>
+			<div class="tile2" onclick="showDetail(2006)">Placeholder</div>
+		</div>
+		<div class="separator"></div>
+		<h2>Care Delivery Responses</h2>
+		<div class="grid-container" id="grid-container-care-delivery">
+			<div class="tile3" onclick="showDetail(3001)">Placeholder</div>
+			<div class="tile3" onclick="showDetail(3002)">Placeholder</div>
+			<div class="tile3" onclick="showDetail(3003)">Placeholder</div>
+			<div class="tile3" onclick="showDetail(3004)">Placeholder</div>
+			<div class="tile3" onclick="showDetail(3005)">Placeholder</div>
+			<div class="tile3" onclick="showDetail(3006)">Placeholder</div>
+		</div>
+		<div class="separator"></div>
+		<h2>FirstNet Responses</h2>
+		<div class="grid-container" id="grid-container-firstNet">
+			<div class="tile4" onclick="showDetail(4001)">Placeholder</div>
+			<div class="tile4" onclick="showDetail(4002)">Placeholder</div>
+			<div class="tile4" onclick="showDetail(4003)">Placeholder</div>
+			<div class="tile4" onclick="showDetail(4004)">Placeholder</div>
+			<div class="tile4" onclick="showDetail(4005)">Placeholder</div>
+			<div class="tile4" onclick="showDetail(4006)">Placeholder</div>
+		</div>
+		<div class="separator"></div>
+		<h2>SurgiNet Responses</h2>
+		<div class="grid-container" id="grid-container-surgiNet">
+			<div class="tile5" onclick="showDetail(5001)">Placeholder</div>
+			<div class="tile5" onclick="showDetail(5002)">Placeholder</div>
+			<div class="tile5" onclick="showDetail(5003)">Placeholder</div>
+			<div class="tile5" onclick="showDetail(5004)">Placeholder</div>
+			<div class="tile5" onclick="showDetail(5005)">Placeholder</div>
+			<div class="tile5" onclick="showDetail(5006)">Placeholder</div>		</div>
+		<div class="separator"></div>
+		<h2>Maternity Responses</h2>
+		<div class="grid-container" id="grid-container-maternity">
+			<div class="tile6" onclick="showDetail(6001)">Placeholder</div>
+			<div class="tile6" onclick="showDetail(6002)">Placeholder</div>
+			<div class="tile6" onclick="showDetail(6003)">Placeholder</div>
+			<div class="tile6" onclick="showDetail(6004)">Placeholder</div>
+			<div class="tile6" onclick="showDetail(6005)">Placeholder</div>
+			<div class="tile6" onclick="showDetail(6006)">Placeholder</div>		</div>	
+		<div class="separator"></div>			
+		<h2>Orders & Results Responses</h2>
+
+		<div class="grid-container" id="grid-container-orders-and-results">
+			<div class="tile7" onclick="showDetail(7001)">Placeholder</div>
+			<div class="tile7" onclick="showDetail(7002)">Placeholder</div>
+			<div class="tile7" onclick="showDetail(7003)">Placeholder</div>
+			<div class="tile7" onclick="showDetail(7004)">Placeholder</div>
+			<div class="tile7" onclick="showDetail(7005)">Placeholder</div>
+			<div class="tile7" onclick="showDetail(7006)">Placeholder</div>
+		</div>
+		<div class="separator"></div>
+		<h2>Devices Responses</h2>
+		<div class="grid-container" id="grid-container-devices">
+			<div class="tile8" onclick="showDetail(8001)">Placeholder</div>
+			<div class="tile8" onclick="showDetail(8002)">Placeholder</div>
+			<div class="tile8" onclick="showDetail(8003)">Placeholder</div>
+			<div class="tile8" onclick="showDetail(8004)">Placeholder</div>
+			<div class="tile8" onclick="showDetail(8005)">Placeholder</div>
+			<div class="tile8" onclick="showDetail(8006)">Placeholder</div>
+		</div>	
+		<div class="separator"></div>
+		<h2>Medications Responses</h2>
+		<div class="grid-container" id="grid-container-devices">
+			<div class="tile9" onclick="showDetail(8001)">Placeholder</div>
+			<div class="tile9" onclick="showDetail(8002)">Placeholder</div>
+			<div class="tile9" onclick="showDetail(8003)">Placeholder</div>
+			<div class="tile9" onclick="showDetail(8004)">Placeholder</div>
+			<div class="tile9" onclick="showDetail(8005)">Placeholder</div>
+			<div class="tile9" onclick="showDetail(8006)">Placeholder</div>
+		</div>	
+	<div class="separator"></div>
+	<div class="bottom-div">
+	</div>
+	</div>
+	
+	
+	<!-- Start detail page -->
+	
+	
+
+    <div class="detail-view" id="detail-view">
+		<h1>
+	Cherwell Response:
+	</h1>
+        <p id="detail-text"></p>
+        <button class="copy-button" onclick="copyToClipboard()">Copy to Clipboard</button>
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+	
+    <div class="notification" id="notification">Text copied to clipboard &#10004;</div>
+	
+	<!-- End detail page-->
+
+<footer>
+    <p style="font-size: 12px; color: #888;">Created by Aaron Woods - May 2024</p>
+</footer>
+
+    <script>
+        // Function to retrieve the analyst name from local storage
+        function getAnalystNameFromStorage() {
+            return localStorage.getItem('analystName') || '';
+        }
+
+        // Function to save the analyst name to local storage
+        function saveAnalystNameToStorage(name) {
+            localStorage.setItem('analystName', name);
+        }
+
+        // Function to populate the analyst name input field
+        function populateAnalystName() {
+            const analystNameInput = document.getElementById('analyst-name');
+            const savedName = getAnalystNameFromStorage();
+            if (savedName) {
+                analystNameInput.value = savedName;
+            }
+        }
+
+        // Call the populateAnalystName function when the page loads
+        window.addEventListener('DOMContentLoaded', populateAnalystName);
+
+        // Function to handle analyst name changes and save to local storage
+        document.getElementById('analyst-name').addEventListener('input', function() {
+            saveAnalystNameToStorage(this.value);
+        });
+		
+	
+        function showDetail(tileNumber) {
+            
+			const details = {
+			// All Solutions Responses [Prefix 1xxx]
+                1001: "We're reaching out to inform you that we're closing your ticket as we will require any further action or change regarding this request will require approval from your Director/Operations Manager/Head of Unit.\nShould you wish to pursue this matter further, please ensure to obtain the necessary approvals. \nIf you have any questions or need assistance navigating this process, feel free to reach out to us, and we'll be happy to guide you through it.",
+				1002: "",
+				1003: "We're reaching out to inform you that unfortunately we're closing your ticket as we are unable to implement the requested change in the system due to technical limitations within the EMR.\n\n[Insert reason why, what we have done and how we have tried to resolved this  (i.e., weekly enhancement and optimisation meeting discussion, reached out to UCern community, HTS constraints etc)]\n\nIf you have any questions, please feel free to reach out to us and discuss further.",
+				1004: "We're reaching out to inform you that this issue is still being investigated. As this is a long-standing issue which will require our vendor to investigate further we are closing this ticket and logging a Problem ticket. This Incident will be linked to the new Problem ticket.\n\nThe new Problem ticket ID is [Problem Ticket ID].\n\nYou will be notified once this Problem is fully resolved via email.",
+				1005: "This issue has been resolved, please reach out if you experience any further issues or errors.",
+				1006: "",
+            // Core Responses [Prefix 2xxx]
+				2001: "This users access has now been created. Please get the user to log on to the EMR at their earliest convenience,  if the user is facing any issues with their login please get them to log a Cherwell ticket detailing any issues they are facing.",
+				2002: "This access request has now been completed. If any user is facing issues with their login please get them to log a Cherwell ticket detailing any issues they are facing.",
+				2003: "Please ensure when you’re creating a patient list that you select the Encounter Type filter as 'Inpatient'. You are seeing patients with a 'pre-admit' in your list, this is expected behaviour. For more information on how to alter your patient list see the following QRG: https://emr-media.nh.org.au/wp-content/uploads/2023/08/Allied-Health-Patient-Lists-Location-and-Medical-Service.pdf. Please let us know once changing this setting if your issue persists.",
+				2004: "To fix the failure with mapped account error you need to reset your password. To achieve this you can either click CTRL + ALT + DEL on any NH computer and select 'Reset Password' and follow the prompts. Or you can call NH Service Hub on 834 55555 and request a password reset. Please reach out if you have any further issues after the password reset.",
+				2005: "When a new clinic is created or an existing clinic changes the clinic code the EMR team needs to be informed. This is because the EMR team needs to configure the code within the EMR, if this is not done prior to booking a patient in iPM the patient will not show up on the Home screen within the EMR. This clinic has now been set up correctly within the EMR, however any patient who was booked prior to now will need to have their appointment re-triggered from iPM. To achieve this you need to edit the appointment within iPM and add a full stop to the comments field within the Dependent Resources tab. If you require further help with re-trigerring of iPM appointments please reach out to the Outpatients department.",
+			// Care Delivery [Prefix 3xxx]
+				
+			// FirstNet [Prefix 4xxx]
+				
+			// SurgiNet [Prefix 5xxx]
+				
+			// Maternity [Prefix 6xxx]
+				
+			// Orders & Results [Prefix 7xxx]
+				
+			// Devices [Prefix 8xxx]
+				
+			// Medications [Prefix 9xxx]
+				
+			
+            };
+            const analystName = document.getElementById('analyst-name').value;
+			const customerName = document.getElementById('customer-name').value;
+			const greeting = "Dear [Customer Name],\n\n" 
+			const closing = "\n\nThank you, [Analyst Name]." 
+			let detailText = details[tileNumber];
+			detailText = greeting + detailText + closing // Add Dear Customer + From Analyst
+			detailText = detailText.replace("[Analyst Name]", analystName);
+			detailText = detailText.replace("[Customer Name]", customerName);
+			
+			
+			document.getElementById('grid-container').style.display = 'none';
+            document.getElementById('detail-text').innerText = detailText;
+            document.getElementById('detail-view').style.display = 'flex';
+            document.getElementById('page-description').style.display = 'none';
+			document.getElementById('input-names').style.display = 'none';
+			document.getElementById('page-title').style.display = 'none';
+		}
+
+        function goBack() {
+            document.getElementById('detail-view').style.display = 'none';
+            document.getElementById('grid-container').style.display = 'grid';
+			document.getElementById('page-description').style.display = 'block';
+			document.getElementById('input-names').style.display = 'flex';
+			document.getElementById('page-title').style.display = 'block';
+			
+        }
+
+        function copyToClipboard() {
+            const detailText = document.getElementById('detail-text').innerText;
+            navigator.clipboard.writeText(detailText).then(() => {
+                showNotification();
+            }).catch(err => {
+                console.error('Failed to copy text: ', err);
+            });
+        }
+
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            notification.classList.remove('hide');
+
+            setTimeout(() => {
+                notification.classList.add('hide');
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 500);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            width: 60%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .status-light {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-red {
+            background-color: red;
+        }
+        .status-yellow {
+            background-color: yellow;
+        }
+        .status-green {
+            background-color: green;
+        }
+        .admin-panel {
+            display: none;
+            margin-top: 30px;
+        }
+        .admin-panel input, .admin-panel select {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Domain Status Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Domain</th>
+                <th>Status</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="MCKD7">
+                <td>MCKD7</td>
+                <td><div class="status-light" id="light-MCKD7"></div></td>
+                <td><span id="comment-MCKD7"></span></td>
+            </tr>
+            <tr id="PRDD7">
+                <td>PRDD7</td>
+                <td><div class="status-light" id="light-PRDD7"></div></td>
+                <td><span id="comment-PRDD7"></span></td>
+            </tr>
+            <tr id="PRJD7">
+                <td>PRJD7</td>
+                <td><div class="status-light" id="light-PRJD7"></div></td>
+                <td><span id="comment-PRJD7"></span></td>
+            </tr>
+            <tr id="STGD7">
+                <td>STGD7</td>
+                <td><div class="status-light" id="light-STGD7"></div></td>
+                <td><span id="comment-STGD7"></span></td>
+            </tr>
+            <tr id="TRND7">
+                <td>TRND7</td>
+                <td><div class="status-light" id="light-TRND7"></div></td>
+                <td><span id="comment-TRND7"></span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="promptAdmin()">Open Admin Panel</button>
+    <button onclick="loadFile()">Load Status File</button>
+
+    <div class="admin-panel" id="admin-panel">
+        <h2>Admin Panel</h2>
+        <label for="domain-select">Select Domain:</label>
+        <select id="domain-select">
+            <option value="MCKD7">MCKD7</option>
+            <option value="PRDD7">PRDD7</option>
+            <option value="PRJD7">PRJD7</option>
+            <option value="STGD7">STGD7</option>
+            <option value="TRND7">TRND7</option>
+        </select>
+        <label for="status-select">Select Status:</label>
+        <select id="status-select">
+            <option value="status-red">Red</option>
+            <option value="status-yellow">Yellow</option>
+            <option value="status-green">Green</option>
+        </select>
+        <label for="comment-input">Comment:</label>
+        <input type="text" id="comment-input">
+        <button onclick="updateStatus()">Update Status</button>
+        <button onclick="saveFile()">Save Status File</button>
+    </div>
+
+    <input type="file" id="fileInput" style="display:none;" onchange="readFile(event)"/>
+
+    <script>
+        let statuses = {
+            "MCKD7": { "status": "status-red", "comment": "" },
+            "PRDD7": { "status": "status-red", "comment": "" },
+            "PRJD7": { "status": "status-red", "comment": "" },
+            "STGD7": { "status": "status-red", "comment": "" },
+            "TRND7": { "status": "status-red", "comment": "" }
+        };
+
+        // Function to toggle admin panel visibility
+        function showAdminPanel() {
+            const adminPanel = document.getElementById('admin-panel');
+            adminPanel.style.display = 'block';
+        }
+
+        // Function to update the status of a domain
+        function updateStatus() {
+            const domain = document.getElementById('domain-select').value;
+            const status = document.getElementById('status-select').value;
+            const comment = document.getElementById('comment-input').value;
+            const light = document.getElementById(`light-${domain}`);
+            const commentField = document.getElementById(`comment-${domain}`);
+
+            light.className = `status-light ${status}`;
+            commentField.textContent = comment;
+
+            statuses[domain] = { "status": status, "comment": comment };
+        }
+
+        // Prompt for admin access
+        function promptAdmin() {
+            const adminPassword = "admin123";
+            const userPassword = prompt("Enter admin password to access admin panel:");
+            if (userPassword === adminPassword) {
+                showAdminPanel();
+            } else {
+                alert("Access Denied: You are not an admin.");
+            }
+        }
+
+        // Function to load statuses from file input
+        function loadFile() {
+            document.getElementById('fileInput').click();
+        }
+
+        // Function to read file
+        function readFile(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const contents = e.target.result;
+                    try {
+                        statuses = JSON.parse(contents);
+                        updateLights();
+                    } catch (error) {
+                        alert("Invalid file format");
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
+
+        // Function to update the lights and comments based on the statuses
+        function updateLights() {
+            for (const domain in statuses) {
+                const status = statuses[domain].status;
+                const comment = statuses[domain].comment;
+                const light = document.getElementById(`light-${domain}`);
+                const commentField = document.getElementById(`comment-${domain}`);
+                
+                light.className = `status-light ${status}`;
+                commentField.textContent = comment;
+            }
+        }
+
+        // Function to save statuses to a file
+        function saveFile() {
+            const a = document.createElement('a');
+            const file = new Blob([JSON.stringify(statuses, null, 2)], { type: 'application/json' });
+            a.href = URL.createObjectURL(file);
+            a.download = 'status.json';
+            a.click();
+        }
+
+        // Load statuses when the page loads
+        window.onload = updateLights;
+    </script>
+</body>
+</html>
