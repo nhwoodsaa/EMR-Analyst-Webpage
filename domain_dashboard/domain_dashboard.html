@@ -115,11 +115,7 @@
             "TRND7": { "status": "status-red", "comment": "" }
         };
 
-        // Function to toggle admin panel visibility
-        function showAdminPanel() {
-            const adminPanel = document.getElementById('admin-panel');
-            adminPanel.style.display = 'block';
-        }
+
 
         // Function to update the status of a domain
         function updateStatus() {
@@ -135,21 +131,6 @@
             statuses[domain] = { "status": status, "comment": comment };
         }
 
-        // Prompt for admin access
-        function promptAdmin() {
-            const adminPassword = "admin123";
-            const userPassword = prompt("Enter admin password to access admin panel:");
-            if (userPassword === adminPassword) {
-                showAdminPanel();
-            } else {
-                alert("Access Denied: You are not an admin.");
-            }
-        }
-
-        // Function to load statuses from file input
-        function loadFile() {
-            document.getElementById('fileInput').click();
-        }
 
 
         // Function to update the lights and comments based on the statuses
@@ -164,7 +145,25 @@
                 commentField.textContent = comment;
             }
         }
-
+		
+		// ------ Admin workflows IMPROVEMENTS TBD ------
+		
+		
+		// Prompt for admin access
+        function promptAdmin() {
+            const adminPassword = "admin123";
+            const userPassword = prompt("Enter admin password to access admin panel:");
+            if (userPassword === adminPassword) {
+                showAdminPanel();
+            } else {
+                alert("Access Denied: You are not an admin.");
+            }
+        }
+        // Function to toggle admin panel visibility
+        function showAdminPanel() {
+            const adminPanel = document.getElementById('admin-panel');
+            adminPanel.style.display = 'block';
+        }
         // Load statuses when the page loads
         window.onload = updateLights;
     </script>
