@@ -254,7 +254,7 @@
             cursor: pointer;
             margin: 5px;
 			transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for smooth transformation and color change */
-
+			z-index: 1001
         }
 		
 		/* Lighten the back & copy background color on hover */
