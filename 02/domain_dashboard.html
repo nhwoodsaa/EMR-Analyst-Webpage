@@ -44,7 +44,8 @@
     </style>
 </head>
 <body>
-    <h1>Domain Status Dashboard</h1>
+    <div id="navbar-container"></div> <!--Placeholder Nav Bar, replaced by JS-->
+	<h1>Domain Status Dashboard</h1>
     <table>
         <thead>
             <tr>
@@ -105,7 +106,7 @@
         <input type="text" id="comment-input">
         <button onclick="updateStatus()">Update Status</button>
     </div>
-
+	<script src="../scripts.js"></script>
     <script>
         let statuses = {
             "PRDD7": { "status": "status-red", "comment": "" },
