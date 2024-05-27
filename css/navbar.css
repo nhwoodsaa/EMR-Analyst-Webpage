@@ -1,17 +1,17 @@
 #main-navbar {
-  background-color: #fff; /* Change background color to white */
-  border-bottom: 2px solid #ccc; /* Add grey border at the bottom */
-  color: #000; /* Change text color to black for better contrast */
+  background-color: #fff; /* White background */
+  border-bottom: 2px solid #ccc; /* Grey border at the bottom */
+  color: #000; /* Black text color */
   padding: 10px 0;
   position: fixed;
   width: 100%;
-  top: 0;
+  top: 0; /* Ensure the navbar starts from the top of the page */
   z-index: 1000;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align items to the start */
   align-items: center;
 }
 
@@ -26,6 +26,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  margin-left: 20px; /* Add some space between the brand and links */
 }
 
 #navbar-links li {
@@ -33,7 +34,7 @@
 }
 
 #navbar-links li a {
-  color: #000; /* Change link color to black for better contrast */
+  color: #000; /* Black link color */
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: bold; /* Make link text bold */
@@ -41,17 +42,18 @@
 }
 
 #navbar-links li a:hover {
-  color: #666; /* Change hover color to grey */
+  color: #666; /* Grey color on hover */
 }
 
 #mobile-menu-toggle {
   display: none;
   flex-direction: column;
   cursor: pointer;
+  margin-left: auto; /* Push the toggle to the far right */
 }
 
 #mobile-menu-toggle span {
-  background-color: #000; /* Change toggle color to black */
+  background-color: #000; /* Black color */
   height: 3px;
   width: 25px;
   margin: 3px 0;
@@ -69,7 +71,7 @@
     width: 100%;
     padding: 10px 0;
     text-align: center;
-    margin-top: 0;
+    margin-top: 0; /* Remove any margin at the top */
     border-top: 2px solid #ccc; /* Add grey border at the top */
   }
 
