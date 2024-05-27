@@ -1,0 +1,296 @@
+html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+            text-align: center;
+			display: block;
+        }
+		.emr-logo {
+			width: 18%;
+			height:auto;
+			align-items: center;
+		}
+		.input-field {
+			display: flex;
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			align-items: center;
+			flex-direction: row;
+		}
+		#input-names {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			width: 100%;
+			max-width: 800px; /* Adjust max-width as needed */
+			margin: 0 auto; /* Center the container horizontally */
+		}
+
+		.input-field:focus {
+			outline: none;
+			border-color: #007bff;
+			box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+		}
+
+		.input-field::placeholder {
+			color: #aaa;
+		}
+		
+		.input-label {
+			font-weight: bold;
+			font-size: 11pt;
+			text-align: left;
+			margin-left: 10px;
+			margin-bottom: 10px;
+			width: 50%;
+		}
+		.input-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 300px;
+            background-color: white;
+            padding: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+			z-index: 1000;
+			
+        }
+		.separator {
+			border-top: 2px dashed #999; /* Use dashed border for a stylish look */
+			margin: 30px 0; /* Increase margin for more separation */
+			width: 100%; /* Make sure the separator spans the entire width */
+			z-index: 10;
+		}
+
+		.section-paragraph {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 1000px; /* Adjust max-width as needed */
+            margin: 0 auto; /* Center the paragraph horizontally */
+		}
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 100%;
+            max-width: 1200px;
+			margin: 0 auto;
+			position: relative;
+			z-index: 10;
+        }
+		.tile {
+			background-color: #005CB9;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile2 {
+			background-color: green;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile3 {
+			background-color: #336666;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile4 {
+			background-color: #CC0000;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile5 {
+			background-color: brown;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile6 {
+			background-color: #FF3366;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile7 {
+			background-color: #FF6600;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile8 {
+			background-color: grey;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile9 {
+			background-color: purple;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			font-size: 1.5em;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: transform 0.3s ease, background-color 0.3s ease;
+			min-width: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.tile::before, .tile2::before, .tile3::before, .tile4::before, .tile5::before, .tile6::before, .tile7::before, .tile8::before, .tile9::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(255, 255, 255, 0); /* Initial transparent overlay */
+			transition: background-color 0.3s ease;
+			z-index: 0;
+		}
+
+		.tile:hover::before, .tile2:hover::before, .tile3:hover::before, .tile4:hover::before, .tile5:hover::before, .tile6:hover::before, .tile7:hover::before, .tile8:hover::before, .tile9:hover::before  {
+			background-color: rgba(255, 255, 255, 0.3); /* Lighten by adding a white overlay */
+		}
+
+		.tile:hover, .tile2:hover, .tile3:hover, .tile4:hover, .tile5:hover, .tile6:hover, .tile7:hover, .tile8:hover, .tile9:hover {
+			transform: scale(1.03);
+		}
+
+		.tile > *, .tile2 > *, .tile3 > *, .tile4 > *, .tile5 > *, .tile6 > *, .tile7 > *, .tile8 > *, .tile9 > *  {
+			position: relative;
+			z-index: 1;
+		}
+
+		
+        .detail-view {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+        .detail-view p {
+            font-size: 1em;
+            margin: 20px 0;
+			max-width: 1000px;
+			
+        }
+        .back-button, .copy-button {
+            background-color: #636569;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+			transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for smooth transformation and color change */
+
+        }
+		.back-button:hover, .copy-button:hover {
+			background-color: grey; /* Lighten the background color on hover */
+        
+		}
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FF6B00;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+			z-index: 1000;
+        }
+        .notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .notification.hide {
+            opacity: 0;
+            transform: translateX(-50%) translateY(10px);
+        }
+		.bottom-div {
+		padding: 50px;
+		}
+		
