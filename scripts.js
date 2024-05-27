@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const navbarContainer = document.getElementById('navbar-container');
     if (navbarContainer) {
-        fetch('navbar.html')
+        fetch('https://nhwoodsaa.github.io/navbar.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
