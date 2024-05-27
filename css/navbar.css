@@ -4,6 +4,7 @@
   padding: 10px 0;
   position: fixed;
   width: 100%;
+  top: 0; /* Ensure the navbar starts from the top of the page */
   z-index: 1000;
 }
 
@@ -63,6 +64,7 @@
     width: 100%;
     padding: 10px 0;
     text-align: center;
+    margin-top: 0; /* Remove any margin at the top */
   }
 
   #navbar-links.active {
