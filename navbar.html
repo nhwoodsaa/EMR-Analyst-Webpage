@@ -1,6 +1,53 @@
+<style>.navbar {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Rounded font */
+}
+
+.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    display: inline-block;
+    margin-left: 20px; /* Adjusted margin to separate links */
+}
+
+.navbar-links li:first-child {
+    margin-left: 0; /* Remove margin for the first link */
+}
+
+.navbar-links li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+.brand-link {
+    font-weight: bold;
+}
+
+
+</style>
+
 <nav class="navbar">
     <div class="navbar-brand">
-        <a href="index.html">My Website</a>
+        <a href="index.html" class="brand-link">My Website</a>
     </div>
     <ul class="navbar-links">
         <li><a href="01/cherwell_responses.html">Cherwell Responses</a></li>
