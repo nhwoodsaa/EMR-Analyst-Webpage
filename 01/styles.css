@@ -1,6 +1,8 @@
 		h2 {
 			margin: 0 auto;
 			max-width: 1200px;
+			margin-bottom: 15px;
+			
 		}
 		
 		.main-content {
@@ -73,9 +75,10 @@
         }
 		.separator {
 			border-top: 2px dashed #999; /* Use dashed border for a stylish look */
-			margin: 30px 0; /* Increase margin for more separation */
+			margin: 30px auto; /* Increase margin for more separation */
 			width: 100%; /* Make sure the separator spans the entire width */
 			z-index: 10;
+			max-width: 1200px;
 		}
         .grid-container {
             display: grid;
