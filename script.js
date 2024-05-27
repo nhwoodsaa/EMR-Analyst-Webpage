@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener("DOMContentLoaded", () => {
     fetch('navbar.html')
         .then(response => {
@@ -8,7 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.text();
         })
         .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
+            const navbarContainer = document.getElementById('navbar-container');
+            if (navbarContainer) {
+                navbarContainer.innerHTML = data;
+            } else {
+                console.error('Navbar container element not found');
+            }
         })
         .catch(error => console.error('Error loading navbar:', error));
 });
