@@ -20,6 +20,7 @@
           <th>Status</th>
           <th>Comment</th>
           <th>Purpose</th>
+		  <th>iPM Connection</th>
         </tr>
       </thead>
       <tbody id="domainDetails">
@@ -46,8 +47,13 @@
 	</div>
     <textarea  type="text" id="commentInput" placeholder="Enter comment" required ></textarea>
     <textarea  type="text" id="purposeInput" placeholder="Enter purpose" required ></textarea >
+
+<label style="display: none; for="iPMconnectionInput">iPM Connection</label>
+<input style="display: none; type="text" id="iPMconnectionInput" name="iPMconnection">
+
     <button class="admin-button" type="submit">Submit</button>
   </form>
+  <div style="margin-top: 20px"></div>
 	</div>
   <!-- Place your script at the end of the body -->
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>

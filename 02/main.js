@@ -38,27 +38,30 @@ function submitForm(e) {
   var statusInput = document.getElementById('statusSelect').value;
   var commentInput = document.getElementById('commentInput').value;
   var purposeInput = document.getElementById('purposeInput').value;
+  var iPMconnectionInput = document.getElementById('iPMconnectionInput').value;
 
   // Debugging: Log the captured values
   console.log("Domain Key: ", domainKey);
   console.log("Status Input: ", statusInput);
   console.log("Comment Input: ", commentInput);
   console.log("Purpose Input: ", purposeInput);
+  console.log("iPMconnection Input: ", iPMconnectionInput);
 
-  saveData(domainKey, statusInput, commentInput, purposeInput);
+  saveData(domainKey, statusInput, commentInput, purposeInput, iPMconnectionInput);
 }
 
 // Function to save data to Firebase
-function saveData(domainKey, status, comment, purpose) {
+function saveData(domainKey, status, comment, purpose, iPMconnection) {
   var domainRef = database.ref('domainStatus').child(domainKey);
 
   // Debugging: Log the data to be saved
-  console.log("Saving Data: ", { status: status, comment: comment, purpose: purpose });
+  console.log("Saving Data: ", { status: status, comment: comment, purpose: purpose, iPMconnection: iPMconnection });
 
   domainRef.update({
     status: status,
     comment: comment,
-    purpose: purpose
+    purpose: purpose,
+    iPMconnection: iPMconnection
   }).then(() => {
     alert("Data saved successfully!");
     displayAllDomainDetails(); // Refresh the displayed data after saving
@@ -89,12 +92,12 @@ function readDataAndPopulateDropdown() {
         option.textContent = key;
         option.setAttribute('data-comment', data[key].comment || ''); // Store comment as data attribute
         option.setAttribute('data-purpose', data[key].purpose || ''); // Store purpose as data attribute
+        option.setAttribute('data-iPMconnection', data[key].iPMconnection || ''); // Store iPMconnection as data attribute
         domainSelect.appendChild(option);
       }
     }
   });
 }
-
 
 // Function to display all domain details
 function displayAllDomainDetails() {
@@ -116,7 +119,8 @@ function displayAllDomainDetails() {
         tr.innerHTML = `<td>${key}</td>
                         <td>${statusCircle}</td>
                         <td>${domainInfo.comment}</td>
-                        <td>${domainInfo.purpose}</td>`;
+                        <td>${domainInfo.purpose}</td>
+                        <td>${domainInfo.iPMconnection}</td>`;
         domainDetails.appendChild(tr);
       }
     }
@@ -128,23 +132,26 @@ function populateFieldsFromDropdown() {
   var selectedOption = this.options[this.selectedIndex];
   var comment = selectedOption.getAttribute('data-comment') || '';
   var purpose = selectedOption.getAttribute('data-purpose') || '';
+  var iPMconnection = selectedOption.getAttribute('data-iPMconnection') || '';
 
   document.getElementById('commentInput').value = comment;
   document.getElementById('purposeInput').value = purpose;
+  document.getElementById('iPMconnectionInput').value = iPMconnection;
 }
 
 // Prompt for admin access
-        function promptAdmin() {
-            const adminPassword = "admin123";
-            const userPassword = prompt("Enter admin password to access admin panel:");
-            if (userPassword === adminPassword) {
-                showAdminPanel();
-            } else {
-                alert("Access Denied: You are not an admin.");
-            }
-        }
-        // Function to toggle admin panel visibility
-        function showAdminPanel() {
-            const adminPanel = document.getElementById('admin-panel');
-            adminPanel.style.display = 'block';
-        }
+function promptAdmin() {
+  const adminPassword = "admin123";
+  const userPassword = prompt("Enter admin password to access admin panel:");
+  if (userPassword === adminPassword) {
+    showAdminPanel();
+  } else {
+    alert("Access Denied: You are not an admin.");
+  }
+}
+
+// Function to toggle admin panel visibility
+function showAdminPanel() {
+  const adminPanel = document.getElementById('admin-panel');
+  adminPanel.style.display = 'block';
+}
