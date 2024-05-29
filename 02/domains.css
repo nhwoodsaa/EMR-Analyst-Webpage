@@ -12,6 +12,7 @@ body {
             padding: 10px;
             border: 1px solid #ddd;
         }
+		
         .status-circle {
             width: 30px;
             height: 30px;
@@ -34,3 +35,20 @@ body {
         .admin-panel input, .admin-panel select {
             margin: 10px;
         }
+		/* Back and copy button styling + animation timing */
+        .admin-button {
+            background-color: #636569;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+			transition: transform 0.3s ease, background-color 0.3s ease; /* Add transition for smooth transformation and color change */
+			z-index: 1001
+        }
+		
+		/* Lighten the back & copy background color on hover */
+		.admin-button:hover {
+			background-color: grey; 
+		}
