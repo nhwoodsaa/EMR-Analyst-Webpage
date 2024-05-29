@@ -21,3 +21,10 @@
             max-width: 1000px; /* Adjust max-width as needed */
             margin: 0 auto; /* Center the paragraph horizontally */
 		}
+		.emr-logo {
+			width: 18%;
+			height:auto;
+			align-items: center;
+			margin: auto;
+			display: flex;
+		}
