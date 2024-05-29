@@ -21,6 +21,8 @@
           <th>Comment</th>
           <th>Purpose</th>
 		  <th>iPM Connection</th>
+		  <th>Outage From</th>
+		  <th>Outage To</th>
         </tr>
       </thead>
       <tbody id="domainDetails">
@@ -47,9 +49,16 @@
 	</div>
     <textarea  type="text" id="commentInput" placeholder="Enter comment" required ></textarea>
     <textarea  type="text" id="purposeInput" placeholder="Enter purpose" required ></textarea >
+	<!-- Add these input fields in your HTML form -->
+	<div class="input-container">
+		<label for="outageFromInput">Outage From:</label>
+		<input type="text" id="outageFromInput" name="outageFrom">
 
-<label style="display: none; for="iPMconnectionInput">iPM Connection</label>
-<input style="display: none; type="text" id="iPMconnectionInput" name="iPMconnection">
+		<label for="outageToInput">Outage To:</label>
+		<input type="text" id="outageToInput" name="outageTo">
+	</div>
+	<label style="display: none; for="iPMconnectionInput">iPM Connection</label>
+	<input style="display: none; type="text" id="iPMconnectionInput" name="iPMconnection">
 
     <button class="admin-button" type="submit">Submit</button>
   </form>

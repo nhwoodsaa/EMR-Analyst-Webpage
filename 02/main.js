@@ -39,6 +39,8 @@ function submitForm(e) {
   var commentInput = document.getElementById('commentInput').value;
   var purposeInput = document.getElementById('purposeInput').value;
   var iPMconnectionInput = document.getElementById('iPMconnectionInput').value;
+  var outageFromInput = document.getElementById('outageFromInput').value;
+  var outageToInput = document.getElementById('outageToInput').value;
 
   // Debugging: Log the captured values
   console.log("Domain Key: ", domainKey);
@@ -46,22 +48,26 @@ function submitForm(e) {
   console.log("Comment Input: ", commentInput);
   console.log("Purpose Input: ", purposeInput);
   console.log("iPMconnection Input: ", iPMconnectionInput);
+  console.log("Outage From Input: ", outageFromInput);
+  console.log("Outage To Input: ", outageToInput);
 
-  saveData(domainKey, statusInput, commentInput, purposeInput, iPMconnectionInput);
+  saveData(domainKey, statusInput, commentInput, purposeInput, iPMconnectionInput, outageFromInput, outageToInput);
 }
 
 // Function to save data to Firebase
-function saveData(domainKey, status, comment, purpose, iPMconnection) {
+function saveData(domainKey, status, comment, purpose, iPMconnection, outageFrom, outageTo) {
   var domainRef = database.ref('domainStatus').child(domainKey);
 
   // Debugging: Log the data to be saved
-  console.log("Saving Data: ", { status: status, comment: comment, purpose: purpose, iPMconnection: iPMconnection });
+  console.log("Saving Data: ", { status: status, comment: comment, purpose: purpose, iPMconnection: iPMconnection, outageFrom: outageFrom, outageTo: outageTo });
 
   domainRef.update({
     status: status,
     comment: comment,
     purpose: purpose,
-    iPMconnection: iPMconnection
+    iPMconnection: iPMconnection,
+    outageFrom: outageFrom,
+    outageTo: outageTo
   }).then(() => {
     alert("Data saved successfully!");
     displayAllDomainDetails(); // Refresh the displayed data after saving
@@ -90,9 +96,12 @@ function readDataAndPopulateDropdown() {
         var option = document.createElement('option');
         option.value = key;
         option.textContent = key;
+        option.setAttribute('data-status', data[key].status || ''); // Store status as data attribute
         option.setAttribute('data-comment', data[key].comment || ''); // Store comment as data attribute
         option.setAttribute('data-purpose', data[key].purpose || ''); // Store purpose as data attribute
         option.setAttribute('data-iPMconnection', data[key].iPMconnection || ''); // Store iPMconnection as data attribute
+        option.setAttribute('data-outageFrom', data[key].outageFrom || ''); // Store outageFrom as data attribute
+        option.setAttribute('data-outageTo', data[key].outageTo || ''); // Store outageTo as data attribute
         domainSelect.appendChild(option);
       }
     }
@@ -120,7 +129,9 @@ function displayAllDomainDetails() {
                         <td>${statusCircle}</td>
                         <td>${domainInfo.comment}</td>
                         <td>${domainInfo.purpose}</td>
-                        <td>${domainInfo.iPMconnection}</td>`;
+                        <td>${domainInfo.iPMconnection}</td>
+                        <td>${domainInfo.outageFrom}</td>
+                        <td>${domainInfo.outageTo}</td>`;
         domainDetails.appendChild(tr);
       }
     }
@@ -130,13 +141,19 @@ function displayAllDomainDetails() {
 // Function to populate input fields from dropdown
 function populateFieldsFromDropdown() {
   var selectedOption = this.options[this.selectedIndex];
+  var status = selectedOption.getAttribute('data-status') || 'green';
   var comment = selectedOption.getAttribute('data-comment') || '';
   var purpose = selectedOption.getAttribute('data-purpose') || '';
   var iPMconnection = selectedOption.getAttribute('data-iPMconnection') || '';
+  var outageFrom = selectedOption.getAttribute('data-outageFrom') || '';
+  var outageTo = selectedOption.getAttribute('data-outageTo') || '';
 
+  document.getElementById('statusSelect').value = status;
   document.getElementById('commentInput').value = comment;
   document.getElementById('purposeInput').value = purpose;
   document.getElementById('iPMconnectionInput').value = iPMconnection;
+  document.getElementById('outageFromInput').value = outageFrom;
+  document.getElementById('outageToInput').value = outageTo;
 }
 
 // Prompt for admin access
