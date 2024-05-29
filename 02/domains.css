@@ -33,8 +33,17 @@ body {
             margin-top: 30px;
         }
         .admin-panel input, .admin-panel select {
-            margin: 10px;
-        }
+			display: flex;
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			align-items: center;
+			flex-direction: row;
+		}
 		/* Back and copy button styling + animation timing */
         .admin-button {
             background-color: #636569;
@@ -52,46 +61,13 @@ body {
 		.admin-button:hover {
 			background-color: grey; 
 		}
-		.input-field {
-			display: flex;
-			width: 100%;
-			padding: 10px;
-			font-size: 16px;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			margin-bottom: 10px;
-			box-sizing: border-box;
-			align-items: center;
-			flex-direction: row;
-		}
-
-		.input-field:focus {
+		.admin-panel:focus {
 			outline: none;
 			border-color: #007bff;
 			box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 		}
 
-		.input-field::placeholder {
+		.admin-panel::placeholder {
 			color: #aaa;
 		}
 		
-		.input-label {
-			font-weight: bold;
-			font-size: 11pt;
-			text-align: left;
-			margin-left: 10px;
-			margin-bottom: 10px;
-			width: 50%;
-		}
-		.input-container {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 300px;
-            background-color: white;
-            padding: 18px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-			z-index: 1000;
-			
-        }
