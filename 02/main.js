@@ -126,12 +126,12 @@ function displayAllDomainDetails() {
         var statusCircle = `<span class="status-circle ${statusClass}"></span>`;
 
         tr.innerHTML = `<td>${key}</td>
-                        <td>${statusCircle}</td>
+                        <td class="td-center">${statusCircle}</td>
                         <td>${domainInfo.comment}</td>
                         <td>${domainInfo.purpose}</td>
                         <td>${domainInfo.iPMconnection}</td>
-                        <td>${domainInfo.outageFrom}</td>
-                        <td>${domainInfo.outageTo}</td>`;
+                        <td class="td-center">${domainInfo.outageFrom}</td>
+                        <td class="td-center">${domainInfo.outageTo}</td>`;
         domainDetails.appendChild(tr);
       }
     }
@@ -172,3 +172,4 @@ function showAdminPanel() {
   const adminPanel = document.getElementById('admin-panel');
   adminPanel.style.display = 'block';
 }
+
