@@ -1,0 +1,36 @@
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        table {
+            width: 60%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .status-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-red {
+            background-color: red;
+        }
+        .status-yellow {
+            background-color: yellow;
+        }
+        .status-green {
+            background-color: green;
+        }
+        .admin-panel {
+            display: none;
+            margin-top: 30px;
+        }
+        .admin-panel input, .admin-panel select {
+            margin: 10px;
+        }

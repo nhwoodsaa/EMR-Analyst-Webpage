@@ -2,44 +2,8 @@
 <html>
 <head>
   <title>Domain Dashboard</title>
-  <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        table {
-            width: 60%;
-            margin: auto;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        .status-circle {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .status-red {
-            background-color: red;
-        }
-        .status-yellow {
-            background-color: yellow;
-        }
-        .status-green {
-            background-color: green;
-        }
-        .admin-panel {
-            display: none;
-            margin-top: 30px;
-        }
-        .admin-panel input, .admin-panel select {
-            margin: 10px;
-        }
-  </style>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="domains.css">
 </head>
 <body>
 <div id="navbar-container"></div> <!--Placeholder Nav Bar, replaced by JS-->
@@ -83,5 +47,6 @@
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
   <script src="main.js"></script>
+  <script src="../scripts.js">/* Script to pull in nav-bar */</script>
 </body>
 </html>
