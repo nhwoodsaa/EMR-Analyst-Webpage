@@ -12,7 +12,11 @@ body {
             padding: 10px;
             border: 1px solid #ddd;
         }
-		
+		    input[type="text"] {
+        width: 100%; /* You can adjust this value to control the width */
+        padding: 10px; /* Adjust padding as needed */
+        box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
         .status-circle {
             width: 30px;
             height: 30px;
