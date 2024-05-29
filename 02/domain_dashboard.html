@@ -34,40 +34,58 @@
   <br><br><br>
 
   <div style="text-align: center;">
-<button class="admin-button" onclick="promptAdmin()" >Open Admin Panel</button>
+<button class="admin-button" onclick="promptAdmin()">Open Admin Panel</button>
 </div>
 	<div class="admin-panel" id="admin-panel">
 	        <h2>Admin Panel</h2>
 			
   <form id="dataForm">
   <div class="input-container">
+    <label for="domainSelect">Domain:</label>
     <select id="domainSelect">
       <!-- Options will be populated by JavaScript -->
     </select>
-	
+  </div>
+  
+  <div class="input-container">
+    <label for="statusSelect">Status:</label>
     <select id="statusSelect">
       <option value="green">Green</option>
       <option value="yellow">Yellow</option>
 	  <option value="red">Red</option>
     </select>
-	</div>
-    <textarea  type="text" id="commentInput" placeholder="Enter comment" required ></textarea>
-    <textarea  type="text" id="purposeInput" placeholder="Enter purpose" required ></textarea >
-	<!-- Add these input fields in your HTML form -->
-	<div class="input-container">
-		<label for="outageFromInput">Outage From:</label>
-		<input type="text" id="outageFromInput" name="outageFrom">
+  </div>
 
-		<label for="outageToInput">Outage To:</label>
-		<input type="text" id="outageToInput" name="outageTo">
-	</div>
-	<label style="display: none;" for="iPMconnectionInput">iPM Connection</label>
-	<input style="display: none;" type="text" id="iPMconnectionInput" name="iPMconnection">
+  <div class="input-container">
+    <label for="commentInput">Comment:</label>
+    <textarea id="commentInput" placeholder="Enter comment" required></textarea>
+  </div>
 
+  <div class="input-container">
+    <label for="purposeInput">Purpose:</label>
+    <textarea id="purposeInput" placeholder="Enter purpose" required></textarea>
+  </div>
+
+  <div class="input-container">
+    <label for="outageFromInput">Outage From:</label>
+    <input type="text" id="outageFromInput" name="outageFrom">
+  </div>
+
+  <div class="input-container">
+    <label for="outageToInput">Outage To:</label>
+    <input type="text" id="outageToInput" name="outageTo">
+  </div>
+
+  <label style="display: none;" for="iPMconnectionInput">iPM Connection</label>
+  <input style="display: none;" type="text" id="iPMconnectionInput" name="iPMconnection">
+
+  <div style="text-align: center;">
     <button class="admin-button" type="submit">Submit</button>
+  </div>
   </form>
   <div style="margin-top: 20px"></div>
-	</div>
+  </div>
+
   <!-- Place your script at the end of the body -->
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
