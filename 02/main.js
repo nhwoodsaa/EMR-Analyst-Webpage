@@ -141,7 +141,7 @@ function displayAllDomainDetails() {
 // Function to populate input fields from dropdown
 function populateFieldsFromDropdown() {
   var selectedOption = this.options[this.selectedIndex];
-  var status = selectedOption.getAttribute('data-status') || 'green';
+  var status = selectedOption.getAttribute('data-status') || '';
   var comment = selectedOption.getAttribute('data-comment') || '';
   var purpose = selectedOption.getAttribute('data-purpose') || '';
   var iPMconnection = selectedOption.getAttribute('data-iPMconnection') || '';
