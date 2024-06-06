@@ -43,6 +43,7 @@
 				2004: "To fix the failure with mapped account error you need to reset your password. To achieve this you can either click CTRL + ALT + DEL on any NH computer and select 'Reset Password' and follow the prompts. Or you can call NH Service Hub on 834 55555 and request a password reset. Please reach out if you have any further issues after the password reset.",
 				2005: "When a new clinic is created or an existing clinic changes the clinic code the EMR team needs to be informed. This is because the EMR team needs to configure the code within the EMR, if this is not done prior to booking a patient in iPM the patient will not show up on the Home screen within the EMR. This clinic has now been set up correctly within the EMR, however any patient who was booked prior to now will need to have their appointment re-triggered from iPM. To achieve this you need to edit the appointment within iPM and add a full stop to the comments field within the Dependent Resources tab. If you require further help with re-trigerring of iPM appointments please reach out to the Outpatients department.",
 				2006: "Please have your Manager fill in the account Creation/Modification Cherwell request. We will require your Username, Full Name, EMR Role/Title and your EMR Position. ",
+				2007: "This patient was discharged statistically (incorrectly) in iPM which leaves the encounter in an active status. I have changed the discharge method to home now so the patient will be discharged within the EMR.",
 			// Care Delivery [Prefix 3xxx]
 				
 			// FirstNet [Prefix 4xxx]
