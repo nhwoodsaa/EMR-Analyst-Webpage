@@ -44,6 +44,7 @@
 				2005: "When a new clinic is created or an existing clinic changes the clinic code the EMR team needs to be informed. This is because the EMR team needs to configure the code within the EMR, if this is not done prior to booking a patient in iPM the patient will not show up on the Home screen within the EMR. This clinic has now been set up correctly within the EMR, however any patient who was booked prior to now will need to have their appointment re-triggered from iPM. To achieve this you need to edit the appointment within iPM and add a full stop to the comments field within the Dependent Resources tab. If you require further help with re-trigerring of iPM appointments please reach out to the Outpatients department.",
 				2006: "Please have your Manager fill in the account Creation/Modification Cherwell request. We will require your Username, Full Name, EMR Role/Title and your EMR Position. ",
 				2007: "This patient was discharged statistically (incorrectly) in iPM which leaves the encounter in an active status. I have changed the discharge method to home now so the patient will be discharged within the EMR.",
+				2008: "Please use the MyExperience button on the toolbar to switch your position to the correct role. Once completed please log out of the EMR and open the app you require. See this QRG for more information: https://emr-media.nh.org.au/wp-content/uploads/2023/08/Nurses-%E2%80%93-MyExperience-Changing-Positions-in-EMR.pdf",
 			// Care Delivery [Prefix 3xxx]
 				
 			// FirstNet [Prefix 4xxx]
