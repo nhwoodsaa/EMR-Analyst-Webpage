@@ -45,6 +45,7 @@
 				2006: "Please have your Manager fill in the account Creation/Modification Cherwell request. We will require your Username, Full Name, EMR Role/Title and your EMR Position. ",
 				2007: "This patient was discharged statistically (incorrectly) in iPM which leaves the encounter in an active status. I have changed the discharge method to home now so the patient will be discharged within the EMR.",
 				2008: "Please use the MyExperience button on the toolbar to switch your position to the correct role. Once completed please log out of the EMR and open the app you require. See this QRG for more information: https://emr-media.nh.org.au/wp-content/uploads/2023/08/Nurses-%E2%80%93-MyExperience-Changing-Positions-in-EMR.pdf",
+				2009: "When a patient has a pre-admission due to a waitlist but is also statistically discharged and admitted the EMR cannot combine all three encounters together at once. This is a known issue with no resolution. We have merged the encounters together now so it should reflect correctly in the EMR.\n\nPlease review the patient chart as some medications, orders and tasks may be duplicated. Please continue to notify us of future cases."
 			// Care Delivery [Prefix 3xxx]
 				
 			// FirstNet [Prefix 4xxx]
