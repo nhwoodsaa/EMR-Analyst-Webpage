@@ -8,6 +8,28 @@
 	<link rel="icon" href="images/laptop_icon.png" type="image/png">
 	<link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="css/styles.css">
+	    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+			margin: 0 auto;
+			position: relative;
+        }
+        .grid-item {
+            text-align: center;
+        }
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+        }
+		.link-image {
+			width: 150px;
+			height: 150px;
+		}
+    </style>
 </head>
 <body>
 <img src="images/EMR-LOGO-RGB.png" class="emr-logo" alt="EMR Logo">
@@ -18,8 +40,23 @@ Welcome to the EMR Analyst Helper website! This is work in progress, if you have
 Please use the navigation bar at the top of the website to move around.
 <br><br>
 		</p>
-		
-		<img class="emr-logo" src="images/emr_meme_MyHumerusLife.jpeg">
+<!-- <img class="emr-logo" src="images/emr_meme_MyHumerusLife.jpeg"> -->
+ <h1>Helpful Links</h1>
+    <div class="grid-container">
+        <div class="grid-item">
+            <a href="https://wiki.cerner.com/display/public/reference/Reference+Pages+Home" target= "_blank">
+                <img src="images/index-links/cerner-ref-pages.png" class= "link-image" alt="Cerner Reference Pages">
+            </a>
+            <p>Cerner Reference Pages</p>
+        </div>
+        <div class="grid-item">
+            <a href="https://chat.openai.com/auth/login" target= "_blank">
+                <img src="images/index-links/openai-logomark.png"  class= "link-image" alt="Chat GPT" >
+            </a>
+            <p>Chat GPT</p>
+        </div>
+        <!-- Add more grid items as needed -->
+    </div>
 		
     <script src="scripts.js">/* Script to pull in nav-bar */</script>
 </body>
