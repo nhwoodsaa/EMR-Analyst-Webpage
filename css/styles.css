@@ -1,4 +1,5 @@
-        body {
+    /* Standard Styles for all Pages */ 
+		body {
             height: 100%;
             margin: 0;
             padding-top: 62px; /* To ensure nav-bar renders in correct spot*/
@@ -18,41 +19,56 @@
             font-size: 18px;
             margin-bottom: 20px;
             text-align: center;
-            max-width: 1000px; /* Adjust max-width as needed */
-            margin: 0 auto; /* Center the paragraph horizontally */
+            max-width: 1000px; 
+            margin: 0 auto; 
 		}
-		/* Styles for the Title Tile */
-			.emr-logo {
-				width: 50%;
-				height:auto;
-				align-items: center;
-				margin: auto;
-				padding: 20px;
-				display: flex;
-			}
-			.logo-bg {
-				max-width: 600px;
-				height: auto;
-				width: 100%;
-				background-color: white;
-				margin: 0 auto;
-				border-radius: 16px 16px 0 0;
-				justify-content: center;
-			}
-			.title-bg {
-				max-width: 600px;
-				width: 100%;
-				margin: 0px auto;
-				border-radius: 0 0 16px 16px;
-				background-color: #005CB9;
-				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			}
+		.blurb {
+			max-width: 1300px;	
+			margin: 20px auto;
+			padding: 20px 0 20px 0;
+			background-color: #f9f9f9;	
+			border-radius: 16px;
+			border: 1px solid #d3d3d3;
+		}
+	/* End Standard Styles */
+	
+	
+	/* Styles for the Title Tile */
+		.emr-logo {
+			width: 50%;
+			height:auto;
+			align-items: center;
+			margin: auto;
+			padding: 20px;
+			display: flex;
+		}
+		.logo-bg {
+			max-width: 600px;
+			height: auto;
+			width: 100%;
+			background-color: white;
+			margin: 0 auto;
+			border-radius: 16px 16px 0 0;
+			justify-content: center;
+		}
+		.title-bg {
+			max-width: 600px;
+			width: 100%;
+			margin: 0px auto;
+			border-radius: 0 0 16px 16px;
+			background-color: #005CB9;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
 		.heading {
 			margin: 0 auto;
 			padding: 10px 0 10px 0;
 			color: white;
 		}
-		.heading-bg-top {
+	/* End Title Tile Styles*/
+	
+	
+	/* Helpful Links for Index Page Styles */
+		.helpful-links-header {
 			max-width: 1300px;
 			width: 100%;
 			background-color: white;
@@ -61,8 +77,7 @@
 			background-color: #005CB9;
 			
 		}
-
-		.button-bg {
+		.helpful-links-body {
 			max-width: 1300px;
 			width: 100%;
 			background-color: #f9f9f9;
@@ -71,11 +86,6 @@
 			border-radius: 0 0 16px 16px;
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		}
-		.blurb-bg {
-			max-width: 1300px;	
-			margin: 20px auto;
-			padding: 20px 0 20px 0;
-			background-color: #f9f9f9;	
-			border-radius: 16px;
-			border: 1px solid #d3d3d3;
-		}
+	/* End Helpful Links Styles*/
+	
+	
