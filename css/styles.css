@@ -28,4 +28,43 @@
 			margin: auto;
 			display: flex;
 		}
-		
+		.heading {
+			margin: 0 auto;
+			padding: 10px 0 10px 0;
+			color: white;
+		}
+		.heading-bg-top {
+			max-width: 1300px;
+			width: 100%;
+			background-color: white;
+			margin: 0 auto;
+			border-radius: 16px 16px 0 0;
+			background-color: #005CB9;
+			
+		}
+		.heading-bg-alone {
+			max-width: 600px;
+			width: 100%;
+			background-color: white;
+			margin: 20px auto;
+			border-radius: 16px;
+			background-color: #005CB9;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+		.button-bg {
+			max-width: 1300px;
+			width: 100%;
+			background-color: #f9f9f9;
+			margin: 0 auto;
+			padding: 20px 0 20px 0;
+			border-radius: 0 0 16px 16px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+		.blurb-bg {
+			max-width: 1300px;	
+			margin: 20px auto;
+			padding: 20px 0 20px 0;
+			background-color: #f9f9f9;	
+			border-radius: 16px;
+			border: 1px solid #d3d3d3;
+		}
