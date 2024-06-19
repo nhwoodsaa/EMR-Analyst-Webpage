@@ -1,0 +1,64 @@
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .grid-item {
+            text-align: center;
+        }
+        .button {
+            width: 128px;
+            height: 128px;
+            background: linear-gradient(180deg,#fff 0,#e6e7e8 53%,#e6e7e8 78%,#fff);
+            border-radius: 16px; /* Adjust as needed for roundness */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px; /* Centering button within the grid item and adding bottom margin */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease, background 0.3s ease; /* Transition for hover effect */
+        }
+		.button:hover {
+            background: linear-gradient(45deg,#fff 0,#e6e7e8 33%,#e6e7e8 63%,#fff);
+            transform: scale(1.05); /* Slightly scale up on hover */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+        }
+        .link-image {
+            max-width: 96px;
+            max-height: 96px;
+        }
+		.heading {
+			margin: 0 auto;
+			padding: 10px 0 10px 0;
+			color: white;
+		}
+		.heading-bg {
+			max-width: 1300px;
+			width: 100%;
+			background-color: white;
+			margin: 0 auto;
+			border-radius: 16px 16px 0 0;
+			background-color: #005CB9;
+			
+		}
+		.button-bg {
+			max-width: 1300px;
+			width: 100%;
+			background-color: #f9f9f9;
+			margin: 0 auto;
+			padding: 20px 0 20px 0;
+			border-radius: 0 0 16px 16px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+		.blurb-bg {
+			max-width: 1300px;	
+			margin: 20px auto;
+			padding: 20px 0 20px 0;
+			background-color: #f9f9f9;	
+			border-radius: 16px;
+			border: 1px solid #d3d3d3;
+		}

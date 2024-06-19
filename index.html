@@ -5,81 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMR Analyst Helper</title>
     <link rel="icon" href="images/laptop_icon.png" type="image/png">
-    <link rel="stylesheet" href="../css/navbar.css">
+	<link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .grid-item {
-            text-align: center;
-        }
-        .button {
-            width: 128px;
-            height: 128px;
-            background: linear-gradient(180deg,#fff 0,#e6e7e8 53%,#e6e7e8 78%,#fff);
-            border-radius: 16px; /* Adjust as needed for roundness */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 10px; /* Centering button within the grid item and adding bottom margin */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-			transition: transform 0.3s ease, background 0.3s ease; /* Transition for hover effect */
-        }
-		.button:hover {
-            background: linear-gradient(45deg,#fff 0,#e6e7e8 33%,#e6e7e8 63%,#fff);
-            transform: scale(1.05); /* Slightly scale up on hover */
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-        }
-        .link-image {
-            max-width: 96px;
-            max-height: 96px;
-        }
-    </style>
 </head>
 <body>
     <img src="images/EMR-LOGO-RGB.png" class="emr-logo" alt="EMR Logo">
     <div id="navbar-container"></div> <!--Placeholder Nav Bar, replaced by JS-->
-    <p>
-        <br><br>
-        Welcome to the EMR Analyst Helper website! This is work in progress, if you have any suggestions please reach out! <br><br>
-        Please use the navigation bar at the top of the website to move around.
-        <br><br>
-    </p>
-    <h1>Helpful Links</h1>
-    <div class="grid-container">
-        <div class="grid-item">
-            <a href="https://wiki.cerner.com/display/public/reference/Reference+Pages+Home" target="_blank">
-                <div class="button">
-                    <img src="images/index-links/cerner-ref-pages.png" class="link-image" alt="Cerner Reference Pages">
-                </div>
-            </a>
-            <p>Cerner Reference Pages</p>
-        </div>
-        <div class="grid-item">
-            <a href="https://chat.openai.com/auth/login" target="_blank">
-                <div class="button">
-                    <img src="images/index-links/openai-logomark.png" class="link-image" alt="Chat GPT">
-                </div>
-            </a>
-            <p>Chat GPT</p>
-        </div>
-        <div class="grid-item">
-            <a href="https://wiki.cerner.com/display/1101discernHP/Programming+Reference+Help+in+Discern+Explorer" target="_blank">
-                <div class="button">
-                    <img src="images/index-links/discernvisual.png" class="link-image" alt="DVDev Help">
-                </div>
-            </a>
-            <p>Discern Visual Developer Help</p>
-        </div>
-        <!-- Add more grid items as needed -->
-    </div>
+	<div class="blurb-bg">
+		<p>
+			Welcome to the EMR Analyst Helper website!<br><br>
+			This site is a work in progress. If you have any suggestions, please reach out.
+			Use the navigation bar at the top to navigate through the site.
+			Additionally, there are some helpful links below.
+		</p>
+	</div>
+	<div class="heading-bg">
+    <h1 class="heading">Helpful Links</h1>
+	</div>
+	<div class="button-bg">
+		<div class="grid-container">
+			<div class="grid-item">
+				<a href="https://wiki.cerner.com/display/public/reference/Reference+Pages+Home" target="_blank">
+					<div class="button">
+						<img src="images/index-links/cerner-ref-pages.png" class="link-image" alt="Cerner Reference Pages">
+					</div>
+				</a>
+				<p>Cerner Reference Pages</p>
+			</div>
+			<div class="grid-item">
+				<a href="https://chat.openai.com/auth/login" target="_blank">
+					<div class="button">
+						<img src="images/index-links/openai-logomark.png" class="link-image" alt="Chat GPT">
+					</div>
+				</a>
+				<p>Chat GPT</p>
+			</div>
+			<div class="grid-item">
+				<a href="https://wiki.cerner.com/display/1101discernHP/Programming+Reference+Help+in+Discern+Explorer" target="_blank">
+					<div class="button">
+						<img src="images/index-links/discernvisual.png" class="link-image" alt="DVDev Help">
+					</div>
+				</a>
+				<p>Discern Visual Developer Help</p>
+			</div>
+			<!-- Add more grid items as needed -->
+		</div>
+	</div>
     <script src="scripts.js">/* Script to pull in nav-bar */</script>
 </body>
 </html>
